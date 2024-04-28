@@ -10,13 +10,15 @@ const pool = new Pool({
   });
   console.log("подключися к базе данных");  
 
-router.get('/start', function(req, res, next){
-    const sql = "SELECT * FROM Cats "
+router.post('/start', function(req, res, next){
+    const sql = "SELECT * FROM communication ";
+    console.log(req.body['login']);
+    console.log(req.body['password'])
     pool.query(sql, [], (err, result) => {
       if (err) {
         return console.error(err.message);
       }
-      console.log(result.rows[0].nickname);
+      console.log(result.rows[0].message);
       res.render("start", { cats: result.rows });
     });
 });
