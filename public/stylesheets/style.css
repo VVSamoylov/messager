@@ -6,3 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* insert into communication (user_id, "time", message)
+values(1, LOCALTIMESTAMP, 'aaaaaaa' ); 
+*/
